@@ -140,5 +140,4 @@ const styles = {
   rechargeBtn: { color: '#fff', width: '100%', padding: '14px', border: 'none', borderRadius: '10px', fontSize: '16px', fontWeight: 'bold', marginBottom: '10px' },
   copyBtn: { backgroundColor: 'transparent', color: '#007bff', border: '1px solid #007bff', width: '100%', padding: '10px', borderRadius: '10px' }
 };
-
 export default App;
