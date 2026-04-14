@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration'; // ይሄን ጨምር
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,5 +11,5 @@ root.render(
   </React.StrictMode>
 );
 
-// register() በማድረግ ኦፍላይን እንዲሰራ አድርገው
+// ይህ አፑ ኦፍላይን እንዲሰራ ያደርገዋል
 serviceWorkerRegistration.register();
