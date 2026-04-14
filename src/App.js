@@ -7,7 +7,6 @@ const App = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [loading, setLoading] = useState(false);
   const [copySuccess, setCopySuccess] = useState("");
-  // አዲስ state ለኦፕሬተር ምርጫ (Default: Ethio Telecom)
   const [operator, setOperator] = useState("ethio"); 
 
   const videoConstraints = {
@@ -16,7 +15,6 @@ const App = () => {
     facingMode: "environment" 
   };
 
-  // የኦፕሬተር ኮዱን መለየጫ
   const getPrefix = () => (operator === "ethio" ? "*805*" : "*705*");
 
   const captureAndScan = useCallback(async () => {
@@ -46,7 +44,7 @@ const App = () => {
       }
     }
     setLoading(false);
-  }, [webcamRef, operator]);
+  }, [operator]); // dependency እዚህ ጋር ተስተካክሏል
 
   const rechargeNow = () => {
     if (cardNumber) {
@@ -61,7 +59,6 @@ const App = () => {
         <p style={styles.subtitle}>ኦፕሬተር መርጠህ ካርዱን ስካን አድርግ</p>
       </header>
 
-      {/* የኦፕሬተር መምረጫ (Selector) */}
       <div style={styles.tabContainer}>
         <button 
           onClick={() => setOperator("ethio")}
@@ -140,4 +137,5 @@ const styles = {
   rechargeBtn: { color: '#fff', width: '100%', padding: '14px', border: 'none', borderRadius: '10px', fontSize: '16px', fontWeight: 'bold', marginBottom: '10px' },
   copyBtn: { backgroundColor: 'transparent', color: '#007bff', border: '1px solid #007bff', width: '100%', padding: '10px', borderRadius: '10px' }
 };
+
 export default App;
