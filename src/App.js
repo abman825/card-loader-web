@@ -15,7 +15,7 @@ const App = () => {
     facingMode: "environment" 
   };
 
-  const getPrefix = () => (operator === "ethio" ? "*805*" : "*705*");
+  const getPrefix = useCallback(() => (operator === "ethio" ? "*805*" : "*705*"), [operator]);
 
   const captureAndScan = useCallback(async () => {
     setLoading(true);
@@ -44,7 +44,7 @@ const App = () => {
       }
     }
     setLoading(false);
-  }, [operator]); // dependency እዚህ ጋር ተስተካክሏል
+  }, [operator, getPrefix]); // አሁን ይሄ በትክክል እዚህ ቦታ ላይ ገብቷል
 
   const rechargeNow = () => {
     if (cardNumber) {
