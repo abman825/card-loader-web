@@ -74,6 +74,7 @@ const App = () => {
         </button>
       </div>
 
+
       <div style={styles.cameraWrapper}>
         <Webcam
           audio={false}
